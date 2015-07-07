@@ -14,9 +14,32 @@ ingredients = {
     "fruity": ["slice of orange", "dash of cassis", "cherry on top"]
 }
 
-res
+responses = {}
+
 def bartender():
-    for q in questions:
-        raw_input(questions[q])
+    for i in questions:
+        responses[i] = raw_input(questions[i])
+ 
+
+    boolResponses = {}
+    for i in responses:
+        if responses[i] == 'yes':
+            boolResponses[i] = True
+        elif responses[i] == 'no':
+            boolResponses[i] = False
+        else:
+            boolResponses[i] = "Not an acceptable answer"
             
-bartender()    
+    print boolResponses
+
+bartender()
+
+
+
+#drink function
+
+# def makeDrink(bartender):
+#     drink = []
+#     for i in ingredients:
+        
+    
