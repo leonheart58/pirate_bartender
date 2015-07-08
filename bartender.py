@@ -1,3 +1,5 @@
+import random
+
 questions = {
     "strong": "Do ye like yer drinks strong?",
     "salty": "Do ye like it with a salty tang?",
@@ -29,17 +31,33 @@ def bartender():
             boolResponses[i] = False
         else:
             boolResponses[i] = "Not an acceptable answer"
-            
-    print boolResponses
+          
+    #print boolResponses  
+    return boolResponses
 
-bartender()
 
 
 
 #drink function
 
 # def makeDrink(bartender):
-#     drink = []
-#     for i in ingredients:
-        
+#     recipe = []
+#     for i in bartender.boolResponses:
+#         if bartender.boolResponses[i] == True:
+#             recipe = random.choice(ingredients[i])
+#     print recipe
+            
+    
+# makeDrink()
+
+
+def makeDrink(boolResponses):
+    recipe = []
+    for i in boolResponses:
+        if boolResponses[i] == True:
+            recipe = random.choice(ingredients[i])
+    print recipe
+
+
+
     
