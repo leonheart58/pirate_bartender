@@ -5,7 +5,8 @@ questions = {
     "salty": "Do ye like it with a salty tang?",
     "bitter": "Are ye a lubber who likes it bitter?",
     "sweet": "Would ye like a bit of sweetness with yer poison?",
-    "fruity": "Are ye one for a fruity finish?"
+    "fruity": "Are ye one for a fruity finish?",
+    "savory": "Do you like savory?"
 }
 
 ingredients = {
@@ -13,7 +14,8 @@ ingredients = {
     "salty": ["olive on a stick", "salt-dusted rim", "rasher of bacon"],
     "bitter": ["shake of bitters", "splash of tonic", "twist of lemon peel"],
     "sweet": ["sugar cube", "spoonful of honey", "spash of cola"],
-    "fruity": ["slice of orange", "dash of cassis", "cherry on top"]
+    "fruity": ["slice of orange", "dash of cassis", "cherry on top"],
+    "savory": ["chips","noodles"]
 }
 
 responses = {}
@@ -37,27 +39,16 @@ def bartender():
 
 
 
-
-#drink function
-
-# def makeDrink(bartender):
-#     recipe = []
-#     for i in bartender.boolResponses:
-#         if bartender.boolResponses[i] == True:
-#             recipe = random.choice(ingredients[i])
-#     print recipe
-            
-    
-# makeDrink()
-
-
 def makeDrink(boolResponses):
     recipe = []
     for i in boolResponses:
         if boolResponses[i] == True:
-            recipe = random.choice(ingredients[i])
+            recipe.append(random.choice(ingredients[i]))
     print recipe
 
-
-
     
+if __name__ == '__main__':
+        
+    drink = bartender()
+    print drink
+    makeDrink(drink)
